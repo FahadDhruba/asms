@@ -1,7 +1,5 @@
 let sendBtn = document.getElementById("sendBtn");
 let auth = 'Bearer 664|gfgo4ffap7nt8tt8qpre8wC2eIoxEc8HzUAS6EiR';
-let sid = '4536';
-
 
 document.getElementById("sendType").addEventListener("change", function() {
     let smsstnow = document.getElementById("sendType").value;
@@ -36,6 +34,7 @@ function worker() {
         if (receiverNum != "" && mssg != "") {
             if (validateInput(receiverNum)) {
                 document.getElementById("sendBtn").classList.add("hidden");
+                let sid = document.getElementById("sid").value;
                 fetch('https://app.smsnoc.com/api/v3/sms/send', {
                         method: 'POST',
                         headers: {
@@ -88,6 +87,8 @@ function worker() {
         let mssg = document.getElementById("sMsg").value;
         if (receiverNum != "" && mssg != "") {
 
+
+            let sid = document.getElementById("sid").value;
             fetch('https://app.smsnoc.com/api/v3/sms/send', {
                     method: 'POST',
                     headers: {
@@ -135,7 +136,6 @@ function worker() {
     }
 }
 
-
 // hide warnings
 
 function hider() {
@@ -151,7 +151,7 @@ function remUnitPull() {
 
     fetch('https://app.smsnoc.com/api/v3/balance', {
             headers: {
-                'Authorization': 'Bearer 664|gfgo4ffap7nt8tt8qpre8wC2eIoxEc8HzUAS6EiR',
+                'Authorization': auth,
                 'Content-Type': 'application/json',
                 'Accept': 'application/json'
             }
@@ -165,4 +165,3 @@ function remUnitPull() {
 };
 
 remUnitPull();
-          
