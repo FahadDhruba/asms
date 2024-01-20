@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Main Page</title>
+
+    <!-- Tailwind Css Cdn -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+
+    <section class="bg-slate-100 dark:bg-gray-900 m-2 rounded-md">
+        <div class="py-4 text-md font-bold px-4 mx-auto max-w-2xl lg:py-16">
+            Unit: <span id="unitData" class="text-blue"></span>
+        </div>
+    </section>
+
+    <section class="bg-slate-100 dark:bg-gray-900 m-2 rounded-md">
+        <div class="py-8 px-4 mx-auto max-w-2xl lg:py-16">
+
+
+            <div class="grid gap-4">
+                <div>
+                    <label for="sendType" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">SMS Type</label>
+                    <select id="sendType" class="outline-none bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-2 focus:ring-green-300 focus:border-green-300 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-300 dark:focus:border-green-300">
+                        <option>Select SMS Type</option>
+                        <option value="ss">Single Send</option>
+                        <option value="bs">Bulk Send</option>
+                        <option value="fc">From CSV</option>
+                        <option value="fx">From Excel</option>
+                    </select>
+                </div>
+                <div id="ssd" class="w-full hidden">
+                    <label for="ssRecNum" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Enter Recipient's Number</label>
+                    <input type="text" name="ssRecNum" id="ssRecNum" class="outline-none focus:ring-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-300 focus:border-green-300 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-300 dark:focus:border-green-300" placeholder="8801xxxxxxxxx">
+                </div>
+                <div id="bsd" class="w-full hidden">
+                    <label for="bsRecNum" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Enter All Recipient's Number</label>
+                    <input type="text" name="bsRecNum" id="bsRecNum" class="outline-none focus:ring-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-300 focus:border-green-300 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-300 dark:focus:border-green-300" placeholder="8801xxxxxxxxx,8801xxxxxxxxx,8801xxxxxxxxx">
+                </div>
+                <div class="w-full">
+                    <label for="sMsg" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Enter Message Here...</label>
+                    <textarea id="sMsg" rows="5" class="outline-none focus:ring-2 block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-green-300 focus:border-green-300 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-300 dark:focus:border-green-300" placeholder="Type Here....."></textarea>
+                </div>
+
+            </div>
+            <div id="status" class="my-1">
+                <div id="errorstat" class="hidden text-red-600 py-1 px-3 bg-red-100 rounded-sm"></div>
+                <div id="successstat" class="hidden text-green-600 py-1 px-3 bg-green-100 rounded-sm"></div>
+            </div>
+            <button id="sendBtn" class="inline-flex items-center px-5 py-2.5 mt-4 sm:mt-6 text-sm font-medium text-center text-white bg-green-500 rounded-lg focus:ring-4 focus:ring-green-200 dark:focus:ring-green-900 hover:bg-green-800">
+                Send Message
+            </button>
+
+        </div>
+    </section>
+    <script src="main.js"></script>
+</body>
+
+</html>
