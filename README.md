@@ -11,3 +11,11 @@ This is a simple HTML and JavaScript application that allows users to send text 
 * User-friendly interface designed with **Tailwind CSS**
 * Responsive design for optimal viewing on different devices
 * Visual status indicators for success or failure of message sends
+
+**Technologies Used**
+* HTML
+* Tailwind CSS
+* JavaScript
+
+### **Contact**
+For any questions or feedback, please contact `dhruba.fahad2004@gmail.com`.
